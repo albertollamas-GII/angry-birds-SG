@@ -12,7 +12,7 @@ class Box {
     // x, y, z,  la posición donde se crea
     constructor(scene,x,y,z,width, height, depth) {
 
-      var texture = new THREE.TextureLoader().load('../imgs/wood.png');
+      var texture = new THREE.TextureLoader().load('imgs/wood.png');
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
       texture.repeat.set(2,2);

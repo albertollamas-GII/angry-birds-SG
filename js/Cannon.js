@@ -14,7 +14,7 @@ class Cannon {
 
     createBase() {
         var platform = new THREE.BoxGeometry(30,10,30);
-        var texture = new THREE.TextureLoader().load('../imgs/cannon-base.jpeg');
+        var texture = new THREE.TextureLoader().load('imgs/cannon-base.jpeg');
         var material = new THREE.MeshPhongMaterial( {map: texture} );
         var cube = new THREE.Mesh( platform, material );
         cube.position.set(-4,0.2+5,0);

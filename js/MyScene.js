@@ -78,7 +78,7 @@ class MyPhysiScene extends Physijs.Scene {
 
       this.ball.bodyRed.addEventListener ('collision', (o,v,r,n) => {
         if (o.name === "Pig") {
-          this.playSound('../sounds/pig.mp3');
+          this.playSound('sounds/pig.mp3');
           this.remove(o);
           this.cerdosMuertos++;
           this.score += 100;
@@ -154,7 +154,7 @@ class MyPhysiScene extends Physijs.Scene {
         case KeyCode.KEY_F:
           if( !this.ballLaunched){
             this.createBall();
-            this.playSound('../sounds/red.mp3');
+            this.playSound('sounds/red.mp3');
             this.bolasLanzadas++;
             this.ballLaunched = true;
             this.ball.bodyRed.applyCentralImpulse( new THREE.Vector3( 1500, -( Math.PI / 2 - this.cannon.cannon.rotation.z ), -this.cannon.cannon.rotation.y * 1000 ) );
@@ -403,7 +403,7 @@ class MyPhysiScene extends Physijs.Scene {
     createGround () {
       var geometry = new THREE.BoxGeometry (500,0.2,300);
       geometry.applyMatrix (new THREE.Matrix4().makeTranslation(0,-0.1,0));
-      var texture = new THREE.TextureLoader().load('../imgs/ground.jpeg');
+      var texture = new THREE.TextureLoader().load('imgs/ground.jpeg');
       //Para repetir la textura del suelo
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
@@ -641,7 +641,7 @@ class MyPhysiScene extends Physijs.Scene {
         this.createInitialSpline();
         this.initialCameraMovement();
         this.primerupdate++;
-        this.playSound('../sounds/theme-song.mp3');
+        this.playSound('sounds/theme-song.mp3');
       }
       // Por último, se solicita que la próxima vez que haya que refrescar la ventana se ejecute una determinada función, en este caso la funcion render.
       // La propia función render es la que indica que quiere ejecutarse la proxima vez

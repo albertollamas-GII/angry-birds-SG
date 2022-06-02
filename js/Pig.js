@@ -7,7 +7,7 @@ class Pig {
             0.9 // alto rebote
         );
 
-        var texture = new THREE.TextureLoader().load('../imgs/pig.jpg');
+        var texture = new THREE.TextureLoader().load('imgs/pig.jpg');
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set(1,1);
