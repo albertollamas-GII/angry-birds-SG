@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Angry Birds</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" />
+<!-- En esta ocasión no se usan módulos -->
+    <script type="text/javascript" src="./physijs/jquery.js"></script>
+<!-- Se usa la version de three que viene con physijs -->
+    <script type="text/javascript" src="./physijs/three.min.js"></script>
+    <script type="text/javascript" src="./physijs/physi.js"></script>
+    <script type="text/javascript" src="./physijs/dat.gui.js"></script>
+    <script type="text/javascript" src="./physijs/TrackballControls.js"></script>
+    <script type="text/javascript" src="./physijs/keycode.js"></script>
+    <script type="text/javascript" src="js/Red.js"></script>
+    <script type="text/javascript" src="js/Box.js"></script>     
+    <script type="text/javascript" src="js/MyScene.js"></script>
+    <script type="text/javascript" src="js/Pig.js"></script>
+    <script type="text/javascript" src="js/Glass.js"></script>  
+    <script type="text/javascript" src="js/Cannon.js"></script>               
+    <script type="text/javascript" src="./libs/tween.esm.js"></script>    
+
+    <style>
+        body{
+            margin: 0;
+            overflow:hidden; 
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Div which will hold the Output -->
+<div id="WebGL-output">
+</div>
+
+<div class="dialog" id="new-game-dialog">
+    <p>BIENVENIDO AL ANGRY BIRDS!!</p>
+
+    <img src="imgs/inicio.jpeg">
+    <p>Intenta derribar todos los cerdos utilizando los menores pájaros posibles</p>
+
+    <button class="accept-button" id="accept-button">Entendido!</button>
+</div>
+
+<div class="score" id="score">
+    <p>Score:   </p> <p id="puntos"></p>
+</div>
+
+<div class="help-menu" id="help-menu">
+    <p>CONTROLES</p>
+    <p>W: Mover cañon hacia arriba</p>
+    <p>S: Mover cañon hacia abajo</p>
+    <p>A: Mover cañon hacia la izquierda</p>
+    <p>D: Mover cañon hacia la derecha</p>
+    <p>F: Disparar pájaro</p>
+    <p>L: Recargar</p>
+</div>
+
+<div class="choose-level" id="choose-level">
+    <p>ELIGE UN NIVEL DE DIFICULTAD</p>
+    <p id="nivel-elegido">0</p>
+    <button class="accept-button" id="level-1">Nivel Fácil</button>
+    <button class="accept-button" id="level-2">Nivel Medio</button>
+    <button class="accept-button" id="level-3">Nivel Dificil</button>
+</div>
+
+<div class="game-over-win" id="game-over-win">
+    <p>NIVEL COMPLETADO!</p>
+
+    <p>Has derribado <em id="num-targets"></em> cerdos utilizando <em id="num-cannonballs"></em> pájaros.</p>
+
+    <button class="accept-button" id="next-level-button">Siguiente Nivel</button>
+
+    <button class="accept-button" id="back-to-menu-button">Volver al menú principal</button>
+</div>
+
+<div class="game-over-win" id="game-over-winAll">
+    <p>NIVEL COMPLETADO!</p>
+
+    <p>Has derribado <em id="num-targets"></em> cerdos utilizando <em id="num-cannonballs"></em> pájaros.</p>
+
+    <button class="accept-button" id="back-to-menu-button">Volver al menú principal</button>
+</div>
+
+<div class="game-over-loss" id="game-over-loss">
+    <p>NIVEL FALLIDO!</p>
+
+    <p>Se han escapado algunos cerdos :(</p>
+
+    <p>Se te han agotado el número de pájaros</p>
+
+    <button class="accept-button" id="retry-button">Volver a intentarlo</button>
+
+    <button class="accept-button" id="back-to-menu-button">Volver al menú principal</button>
+</div>
+
+<div class="ayuda" id ="help" >
+    <p>Pulsa H para mostrar/ocultar la ayuda</p>
+</div>
+
+</body>
+
+</html>
